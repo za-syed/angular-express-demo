@@ -1,0 +1,34 @@
+<div ng-controller="customerDetailsContoller" align="center">
+    <div class="panel panel-primary text-center">
+        <div class="panel-heading">Northwind's Customer Details </div>
+        <div class="panel-body">
+            <div class="panel panel-info" style="display: inline-block;">
+                <div class="panel-heading">{{cust.ContactName+ "'s Details'" }}</div>
+                <div class="panel-body text-left">
+                    <fieldset>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <strong>Title: </strong>{{cust.ContactTitle}}
+                            </div>
+                            <div class="form-group">
+                                <strong>Name: </strong>{{cust.ContactName}}
+                            </div>
+                            <div class="form-group">
+                                <strong>Phone: </strong>{{cust.Phone}}
+                            </div>
+                            <div class="form-group">
+                                <strong>City: </strong>{{cust.Address}}
+                            </div>
+                            <div class="form-group">
+                                <strong>Title: </strong>{{cust.City}}
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary" ng-click="changeView('customer')">Cancel</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

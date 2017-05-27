@@ -1,0 +1,76 @@
+<div ng-controller="userCreateContoller" align="center" class="panel-group">
+    <div class="panel panel-primary text-center">
+        <div class="panel-heading">
+            Northwind 
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-default text-center">
+                        <div class="panel-heading"> User administration screen</div>
+                        <div class="panel-body">
+                            <div exp-directive></div>
+                            <div class="alert alert-success" ng-show="user.Sucess">
+                                <span ng-show="user.Success">{{user.Message}}</span>
+                            </div>
+                            <div class="table-responsive">
+                                <div class="text-left">
+                                    <button class="btn btn-primary" ng-click="addUser()"><span class="glyphicon glyphicon-plus">Create</span></button>
+
+                                </div>
+                                <table  class="table table-hover table-nonfluid text-left">
+                                    <thead>
+                                        <!--<th ng-repeat="(header, value) in customers[0]">
+                                        {{header}}
+                                    </th>-->
+                                        <th>
+                                            ID
+                                        </th>
+                                        <th>
+                                            Username
+                                        </th>
+                                        <th>
+                                            Password
+                                        </th>
+                                        <th>
+                                            User ID
+                                        </th>
+                                        <th>
+                                            User Role
+                                        </th>
+                                        <th>
+                                            Action
+                                        </th>
+                                    </thead>                                   
+                                    <tbody>
+                                        <tr ng-repeat="u in Users">
+                                            <!--<td ng-repeat="cell in row">
+                                        {{cell}}
+                                    </td>-->
+                                            <td>
+                                                {{u.ID}}
+                                            </td>
+                                            <td>
+                                                {{u.Username}}
+                                            </td>
+                                            <td>
+                                                {{u.Password}}
+                                            </td>
+                                            <td>
+                                                {{u.UserID}}
+                                            </td>
+                                            <td>
+                                                {{u.UserRole}}
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-primary" ng-click="displayUser(u)"><span class="glyphicon glyphicon-sunglasses">View</span></button>
+                                                <button class="btn btn-primary" ng-click="EditUser(u)"><span class="glyphicon glyphicon-edit"></span>Edit</button>
+                                                <button class="btn btn-danger" ng-click="deleteUser(u)"><span class="glyphicon glyphicon-remove-sign" ></span>Delete</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</div>

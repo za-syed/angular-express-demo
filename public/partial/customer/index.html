@@ -1,0 +1,74 @@
+<div ng-controller="customerContoller" class="panel-group" align="center">
+    <div class="panel panel-primary text-center">
+        <div class="panel-heading">
+            Northwind
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading"> Customers</div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <div class="text-left">
+                            <span class="glyphicon glyphicon-plus" ng-click="addCustomer()">Create</span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-nonfluid text-left">
+                                <thead>
+                                    <!--<th ng-repeat="(header, value) in customers[0]">
+                                        {{header}}
+                                    </th>-->
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Phone
+                                    </th>
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        City
+                                    </th>
+
+                                    <th>
+                                        Action
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="c in customers">
+                                        <!--<td ng-repeat="cell in row">
+                                        {{cell}}
+                                    </td>-->
+                                        <td>
+                                            {{c.ContactTitle}}
+                                        </td>
+                                        <td>
+                                            {{c.ContactName}}
+                                        </td>
+                                        <td>
+                                            {{c.Phone}}
+                                        </td>
+                                        <td>
+                                            {{c.Address}}
+                                        </td>
+                                        <td>
+                                            {{c.City}}
+                                        </td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-sunglasses" ng-click="displayCustomer(c)"></span>
+                                            <span class="glyphicon glyphicon-edit" ng-click="EditCustomer(c)"></span>
+                                            <span class="glyphicon glyphicon-remove-sign" ng-click="deleteCustomer(c.CustomerID)"></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

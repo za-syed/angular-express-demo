@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<!-- Latest compiled and minified CSS -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+  crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+  crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+  crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-smart-table/2.1.8/smart-table.min.js"></script>-->
+<link rel="stylesheet" href="stylesheets/style.css">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<body ng-app="myApp">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid" ng-controller="loginContoller">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Northwind</a>
+      </div>
+      <ul class="nav navbar-nav" ng-hide="user.loggedIn">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" ng-hide="user.loggedIn">
+        <li><a href="#login">Login</a></li>
+      </ul>
+      <ul class="nav navbar-nav" ng-show="user.loggedIn">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#customer">Customers</a></li>
+        <li><a href="#category">Categories</a></li>
+        <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">Orders <b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu">
+                    <li><a href="#">My Orders</a></li>
+                    <li><a href="#">All Orders</a></li>
+                    <li><a href="#">Pending Orders</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Deleted Orders</a></li>
+                </ul>
+            </li>
+        <li><a href="#">Products</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" ng-show="user.loggedIn">
+        <li class="pull-right"><a class="btn btn-link" ng-click="logout()">Welcome {{user.Username}} <span class="glyphicon glyphicon-user"></span>Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div ng-view></div>
+  </div>
+  <script src="javascripts/smart-table.js"></script>
+  <script src="javascripts/app/app.js"></script>
+  <script src="javascripts/directives/customer.js"></script>
+    <script src="javascripts/controllers/expCtrl.js"></script>
+  <script src="javascripts/routes/routes.js"></script>
+  <!--<script src="javascripts/services/service.js"></script>-->
+  <script src="javascripts/services/userService.js"></script>
+  <script src="javascripts/services/customerService.js"></script>
+  <script src="javascripts/services/categoryService.js"></script>
+  <script src="javascripts/controllers/customerController.js"></script>
+  <script src="javascripts/controllers/categoryController.js"></script>
+  <script src="javascripts/controllers/loginController.js"></script>
+</body>
+
+</html>

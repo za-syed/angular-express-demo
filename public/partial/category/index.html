@@ -1,0 +1,62 @@
+<div ng-controller="categoryContoller" align="center" class="panel-group">
+    <div class="panel panel-primary text-center">
+        <div class="panel-heading">
+            Northwind
+        </div>
+        <div class="panel-body">
+          <div class="panel panel-default text-center">
+                        <div class="panel-heading"> Categories</div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <div class="text-left">     
+                                    <button class="btn btn-primary" ng-click="addCategory()"><span class="glyphicon glyphicon-plus">Create</span></button>                                                                   
+                                </div>
+                                <table class="table table-hover table-nonfluid text-left">
+                                    <thead>
+                                        <!--<th ng-repeat="(header, value) in customers[0]">
+                                        {{header}}
+                                    </th>-->
+                                        <th>
+                                            ID
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>                                        
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="c in categories">
+                                            <!--<td ng-repeat="cell in row">
+                                        {{cell}}
+                                    </td>-->
+                                            <td>
+                                                {{c.CategoryID}}
+                                            </td>
+                                            <td>
+                                                {{c.CategoryName}}
+                                            </td>
+                                            <td>
+                                                {{c.Description}}
+                                            </td>
+                                            <td>
+                                                {{c.Address}}
+                                            </td>
+                                            <td>
+                                                {{c.City}}
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-primary" ng-click="displayCategory(c)"><span class="glyphicon glyphicon-sunglasses">View</span></button>
+                                                <button class="btn btn-primary" ng-click="EditCategory(c)"><span class="glyphicon glyphicon-edit"></span>Edit</button>                                                
+                                                <button class="btn btn-danger"  ng-click="deleteCategory(c.CategoryID)"><span class="glyphicon glyphicon-remove-sign" ></span>Delete</button>                                                
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</div>

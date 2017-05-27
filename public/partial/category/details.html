@@ -1,0 +1,28 @@
+<div ng-controller="categoryDetailsContoller" align="center">
+    <div class="panel panel-primary text-center">
+        <div class="panel-heading">Northwind's Category Details </div>
+        <div class="panel-body">
+            <div class="panel panel-info" style="display: inline-block;">
+                <div class="panel-heading">{{cat.CategoryName+ "'s Details'" }}</div>
+                <div class="panel-body text-left">
+                    <fieldset>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <strong>ID: </strong>{{cat.CategoryID}}
+                            </div>
+                            <div class="form-group">
+                                <strong>Name: </strong>{{cat.CategoryName}}
+                            </div>
+                            <div class="form-group">
+                                <strong>Description: </strong>{{cat.Description}}
+                            </div>                           
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary" ng-click="changeView('category')">Cancel</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

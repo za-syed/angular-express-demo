@@ -1,0 +1,39 @@
+<div ng-controller="categoryEditContoller" align="center">
+    <div class="panel panel-primary text-center">
+        <div class="panel-heading">Northwind's Category Details</div>
+        <div class="panel-body">
+            <div class="panel panel-info">
+                <div class="panel-heading">{{cat.CategoryName+ "'s Details'" }}</div>
+                <div class="panel-body text-left">
+                    <form class="form-horizontal" name="categoryForm" ng-submit="updateCategory(categoryForm.$valid)" novalidate>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="CategoryID">ID: </label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="CategoryID" ng-model="cat.CategoryID" placeholder="CategoryID" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : categoryForm.CategoryName.$invalid }">
+                            <label class="control-label col-sm-2" for="CategoryName">Name: </label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="CategoryName" ng-model="cat.CategoryName" placeholder="Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : categoryForm.Description.$invalid }">
+                            <label class="control-label col-sm-2" for="Description">Description: </label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="Description" ng-model="cat.Description" placeholder="Description" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>Update</button>
+                                <button type="submit" class="btn btn-default" ng-click="changeView('category')"><span class="glyphicon glyphicon-remove-circle"></span>Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

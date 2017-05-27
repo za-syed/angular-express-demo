@@ -1,0 +1,62 @@
+<div ng-controller="customerCreateContoller" align="center">
+    <div class="panel panel-primary text-center">
+        <div class="panel-heading">Northwind's Customer Details</div>
+        <div class="panel-body">
+            <div class="panel panel-info">
+                <div class="panel-heading">Create a new customer</div>
+                <div class="panel-body text-left">
+                    <form class="form-horizontal" name="customerForm" ng-submit="createCustomer(customerForm.$valid)" novalidate>
+                        <div class="form-group" ng-class="{ 'has-error': hasFocus && customerForm.CustomerID.$invalid }">
+                            <label class="control-label col-sm-2" for="CustomerID">CustomerID: </label>
+                            <div class="col-sm-10">
+                                <input type="text" name="CustomerID" ng-focus="hasFocus=true" ng-blur="hasFocus=false" class="form-control" ng-model="cust.CustomerID" placeholder="CustomerID" required maxlength="5">
+                                <p ng-show="hasFocus && customerForm.CustomerID.$invalid" class="help-block">Please enter the customer's id</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': hasFocus && customerForm.ContactTitle.$invalid }">
+                            <label class="control-label col-sm-2" for="Title">Title: </label>
+                            <div class="col-sm-10">
+                                <input type="text" name="ContactTitle" ng-focus="hasFocus=true" ng-blur="hasFocus=false" class="form-control" ng-model="cust.ContactTitle" placeholder="Title" required>
+                                  <p ng-show="hasFocus && customerForm.ContactTitle.$invalid" class="help-block">Please enter a title.</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': hasFocus && customerForm.ContactName.$invalid }">
+                            <label class="control-label col-sm-2" for="pwd">Name: </label>
+                            <div class="col-sm-10">
+                                <input type="text" name="ContactName" ng-focus="hasFocus=true" ng-blur="hasFocus=false" class="form-control" ng-model="cust.ContactName" placeholder="Name" required>
+                                <p ng-show="hasFocus && customerForm.ContactName.$invalid" class="help-block">Please the customer's name.</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': hasFocus && customerForm.Phone.$invalid }">
+                            <label class="control-label col-sm-2" for="Phone">Phone: </label>
+                            <div class="col-sm-10">
+                                <input type="phone" name="Phone" ng-focus="hasFocus=true" ng-blur="hasFocus=false" class="form-control" ng-model="cust.Phone" placeholder="(000)000-0000" required>
+                                <p ng-show="hasFocus && customerForm.Phone.$invalid" class="help-block">Please the customer's phone number.</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': hasFocus && customerForm.Address.$invalid }">
+                            <label class="control-label col-sm-2" for="Address">Address: </label>
+                            <div class="col-sm-10">
+                                <input type="text" name="Address" ng-focus="hasFocus=true" ng-blur="hasFocus=false" class="form-control" ng-model="cust.Address" placeholder="Address" required>
+                                <p ng-show="hasFocus && customerForm.Address.$invalid" class="help-block">Please enter a valid address.</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': hasFocus && customerForm.City.$invalid }">
+                            <label class="control-label col-sm-2" for="City">City: </label>
+                            <div class="col-sm-10">
+                                <input type="text"  ng-focus="hasFocus=true" ng-blur="hasFocus=false" name="City" class="form-control" ng-model="cust.City" placeholder="City" required>
+                                <p ng-show=" hasFocus && customerForm.City.$invalid" class="help-block">Please enter the city.</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary" >Submit</button>
+                                <button type="submit" class="btn btn-primary" ng-click="changeView('customer')">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

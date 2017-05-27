@@ -1,0 +1,67 @@
+<div ng-controller="customerContoller"  align="center">
+    <div class="panel panel-primary" style="display: inline-block;">
+        <div class="panel-heading text-center">
+            Report
+        </div>
+        <div class="panel-body">
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <table class="table table-hover table-nonfluid">
+                            <thead>
+                                <!--<th ng-repeat="(header, value) in customers[0]">
+                                        {{header}}
+                                    </th>-->
+                                <th>
+                                    Title
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Phone
+                                </th>
+                                <th>
+                                    Title
+                                </th>
+                                <th>
+                                    City
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="c in customers">
+                                    <!--<td ng-repeat="cell in row">
+                                        {{cell}}
+                                    </td>-->
+                                    <td>
+                                        {{c.ContactTitle}}
+                                    </td>
+                                    <td>
+                                        {{c.ContactName}}
+                                    </td>
+                                    <td>
+                                        {{c.Phone}}
+                                    </td>
+                                    <td>
+                                        {{c.Address}}
+                                    </td>
+                                    <td>
+                                        {{c.City}}
+                                    </td>
+                                    <td>
+                                        <span class="glyphicon glyphicon-edit" ng-click="displayCustomer(c)"></span>
+                                        <span class="glyphicon glyphicon-remove-sign"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
